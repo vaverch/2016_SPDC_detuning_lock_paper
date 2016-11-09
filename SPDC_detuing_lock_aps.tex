@@ -19,7 +19,7 @@
 \renewcommand{\baselinestretch}{1.1}
 \usepackage{xfrac} %%\sfrac for 1/2 type fractions
 
-  %OWN COMMANDS
+%OWN COMMANDS
 \newcommand{\enquoteit}[1]{``#1''}
 \newcommand{\avr}[1]{\mathop{\left\langle #1 \right\rangle}\nolimits}
 \newcommand{\create}[0]{\mathop{\hat{a}^{\dagger}}\nolimits}
@@ -36,7 +36,7 @@
 
 \title{Controlling the spectrum of single photons from\\ triply-resonant parametric down-conversion}
 \pdfoutput=1
-\author{author et al.$^{1,2,*}$}
+\author{author, author, ...$^{1,2,*}$}
 %\author{Gerhard Schunk$^{1,2,3,*}$}
 %\author{Ulrich Vogl$^{1,2}$}
 %\author{Florian Sedlmeir$^{1,2,3}$}
@@ -56,16 +56,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
-* goal: efficienct single photon atom interaction with a stable contrate and Lorentzian line profile \\
-* insdistinguishable photon pairs widely studied for non-resonant systems. \\
+* goal: efficienct single photon atom interaction with a stable contrate and Lorentzian line profile 
+* insdistinguishable photon pairs widely studied for non-resonant systems. 
 * We show how PDC phase-matching temperature affects the photon spectra.
 \end{abstract}
 
 \maketitle 
 
-%\tableofcontents
+\tableofcontents
 
 \section{Introduction}
+* efficient photon atom coupling -> cavity-assisted PDC -> Lorentzian line shape. Difficulties to lock the cavity below threshold. Additional locking lasers interfere with the detection at the single photon level -> extremely high suppression of the locking beam before the detectors required.  
+
+*pulsing allows to control the number of temporal modes \cite{Brecht2015}. Also exponentially rising pulses \cite{Sych2015}.
+
+* sweep and hold technique shows the frequency mismatch of parametric down-conversion
+
 
 \section{Spectrum of the parametric photons depending frequency mismatch}
 The optical resonator coupling can be described by the resonator bandwidth $\gamma\,$:
@@ -117,7 +123,7 @@ In the limit of low gain, i.e far below threshold, we can iteratively solve the 
 \label{eq:spectrum}
 \end{alignat} 
 
-Vacuum fluctuations\footnote{For an evaluation of Eq.~\ref{eq:spectrum}, only the term $\avr{ \hat{\tx{f}}_\tx{s,i} \left( \nu\right) \hat{\tx{f}}_\tx{s,i} \ssym{2} \left( \nu\right) } = 2 \pi \gamma_\tx{s,i}$ gives a non-zero contribution according to Eq.~\ref{eq:commutator},~\ref{eq:inputoutput},~and~\ref{eq:rateequationslong}.} $\hat{\tx{f}}_\tx{i} \left( \nu\right)$ of the idler mode drive the signal noise power, and visa verse. By integrating over the full frequency space (see Fig.~\ref{fig:SPDCmodesill_shifted}), we get the number $N_\tx{s,i}$ of signal and idler photons in the resonator: 
+Vacuum fluctuations\footnote{For an evaluation of Eq.~\ref{eq:spectrum}, only the term $\avr{ \hat{\tx{f}}_\tx{s,i} \left( \nu\right) \hat{\tx{f}}_\tx{s,i} \ssym{2} \left( \nu\right) } = 2 \pi \gamma_\tx{s,i}$ gives a non-zero contribution.} $\hat{\tx{f}}_\tx{i} \left( \nu\right)$ of the idler mode drive the signal noise power, and visa verse. By integrating over the full frequency space, we get the number $N_\tx{s,i}$ of signal and idler photons in the resonator: 
 \begin{align}
 	N_\tx{s,i} &= \int S_\tx{s,i} (\nu) \, \tx{d} \nu = \frac{1}{\gamma_\tx{s,i}} \frac{ \tx{N}_\tx{p} }{\tx{N}_\tx{th}}  \frac{\gamma_\tx{s} \gamma_\tx{i} }{\gamma_\tx{si}} \frac{1}{1 + \Delta^2} \,  .  
 	\label{eq:twophotonstate}
@@ -129,7 +135,7 @@ In parametric down-conversion, signal and idler are produced in pairs. Hence, we
 \label{eq:rategenbelow}
 \end{align}
 
-The simultaneous generation of signal and idler  favors a description of parametric down-conversion in terms of temporal correlation functions \cite{Fekete2013,glauber1963,Michael2013,Ou1999,Scholz2009,Bocquillon2009,Bettelli2010,Luo2015}. The time-dependent annihilation and creation operators stem from the Fourier back-transformation $\int \tx{d} \nu \, \hat{a}(\nu) \, \tx{e}^{i2 \pi \nu t} \rightarrow \hat{a}(t)$ of Eq.~\ref{eq:rateequationsshortfour} and the input-output relation given by Eq.~\ref{eq:inputoutput}. The normalized cross-correlation function $\tx{g}^{(2)}_\textrm{si}(\tau)$  between signal and idler in terms of the detection time difference $\tau = t_\tx{s} - t_\tx{i}$ is given by
+The simultaneous generation of signal and idler  favors a description of parametric down-conversion in terms of temporal correlation functions \cite{Fekete2013,glauber1963,Michael2013,Ou1999,Scholz2009,Bocquillon2009,Bettelli2010,Luo2015}. The time-dependent annihilation and creation operators stem from the Fourier back-transformation $\int \tx{d} \nu \, \hat{a}(\nu) \, \tx{e}^{i2 \pi \nu t} \rightarrow \hat{a}(t)$  in the the input-output formalism. The normalized cross-correlation function $\tx{g}^{(2)}_\textrm{si}(\tau)$  between signal and idler in terms of the detection time difference $\tau = t_\tx{s} - t_\tx{i}$ is given by
 \begin{align}
 	\tx{g}^{(2)}_\textrm{si}(\tau) &= \frac{ \avr{\hat{a}_\tx{s}^{\dagger \tx{out}} \left(t\right) \hat{a}_\tx{i}^{\dagger \tx{out}}\left(t+\tau\right) \hat{a}^{\tx{out}}_\tx{s} \left(t\right) \hat{a}^{\tx{out}}_\tx{s}\left(t+\tau\right)} }{\avr{\hat{a}^{\dagger \tx{out}}_\tx{s} \left(t\right) \hat{a}^{\tx{out}}_\tx{s} \left(t\right)} \avr{ \hat{a}^{\tx{out}}_\tx{i} \left(t\right) \hat{a}^{\dagger \tx{out}}_\tx{i}\left(t\right)} }  \notag \\
 	&= 1 + \frac{ P_\textrm{th}\left( \delta_\textrm{p},\Delta \right) }{ P^\tx{in}_\textrm{p}  }  \cdot 
@@ -142,9 +148,37 @@ The simultaneous generation of signal and idler  favors a description of paramet
 
 The cross-correlation is usually measured by direct detection of signal and idler.
 
-\section{Parametric down-conversion depending on the phase-matching temperature}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.8]{pictures/exp_WGMR_detuning/WGMRsetup_pulsing4.pdf} 
+\caption{Experimental setup for cavity-enhanced parametric down-conversion at pulsed excitation. (a) We use an amplitude modulator, i.e. a Mach-Zehnder modulator (MZM), to generate square pulses from a continuous wave Nd:YAG laser at a wavelength of \SI{1064}{\nm}. (b) The pulses are frequency-doubled in a periodically poled potassium titanyl phosphate crystal (PPKTP) and monitored on a fast photodetector before the resonator. We use avalanche photodetectors (APD) for the detection of signal and idler below threshold.}
+\label{fig:pulsingsetup}
+\end{figure}
+
+In an ideal experiment, the pump light is switched off instantaneously. The outcoupled light from the cavity then results in a peak at the end of the pulse, since there is no longer destructive interference with the directly reflected pump light. The subsequent decay of the pulse corresponds to the cavity ring-down. An exponential fit of the measured decay according to Eq.~\ref{eq:cavityloadingoutend} gives the pump bandwidth $\gamma_\tx{p}=\SI{34}{\MHz}$, which corresponds to critical coupling of the pump mode.
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=0.8]{pictures/exp_WGMR_detuning/SPDC_detuning_tempshift_1.pdf} 
+\caption{Phase matching of parametric down-conversion below threshold. (a,c) We continuously change the frequency mismatch $\Delta$ of parametric down-conversion (see Eq.~\ref{eq:SPDCfrequ}) on the time scale of seconds by increasing the resonator temperature. The pump laser frequency is locked to the pump mode. (b,d) The signal photons are detected on APD 2. The pump mode bandwidth was $\gamma_\tx{p}=\SI{16}{\MHz}$ in (a) and $\gamma_\tx{p}=\SI{99}{\MHz}$ in (b). The single photon rates on the time scale of nanoseconds are shown in Fig.~\ref{fig:pulsedcountsnano} for the respective frequency mismatches.}
+	\label{fig:pulsedcounts}
+\end{figure}
+
+In the following, we discuss the generation rate of parametric photons (see Eq.~\ref{eq:rategenbelow}) depending on the phase matching of parametric down-conversion and the intracavity pump power. We show the signal count rates (see lower panels of Fig.~\ref{fig:pulsedcounts}(a,b)) depending on the resonator temperature. The pump laser was locked to the pump resonance at zero detuning ($\delta_\tx{p}=0$). The pump laser absolute frequency then follows the temperature-induced frequency shifts\footnote{The approximate proportionality factors for frequency tuning by temperature are \SI{-27}{\MHz\per\milli\kelvin} for the pump mode and \SI{-6.3}{\MHz\per\milli\kelvin} for the parametric modes~\cite{Schlarb1994,Weis1985}.}. This frequency shift is proportional to the frequency mismatch of parametric down-conversion given by Eq.~\ref{eq:SPDCfrequ}. 
+
+The maximal count rates in the lower panels of Fig.~\ref{fig:pulsedcounts}(a,b) are achieved for a zero frequency mismatch at discrete phase matching points. The two peaks in each trace correspond to adjacent longitudinal signal modes (see Sec.~\ref{sec:frequencytuning}). The peaks become wider for the increased coupling to the resonator from Fig.~\ref{fig:pulsedcounts}(b) to Fig.~\ref{fig:pulsedcounts}(d). The non-Lorentzian profiles (see Eq.~\ref{eq:rategenbelow}) additionally indicate the presence of other conversion channels, which have not been blocked with bandpass filters for this measurement \cite{Michael2014}.
+
+Parametric down-conversion in the resonator is driven by an exponential loading curve of the internal pump given by Eq.~\ref{eq:cavityloadinginend}. From an experimental point of view, the intracavity pump power at any point in time is proportional to the difference between the unmodified pump pulse (see Fig.~\ref{fig:pulsedpumptransmission}(a)) and the resonator power in the reflection port (Fig.~\ref{fig:pulsedpumptransmission}(c)\footnote{Normalization is required in our case, since we used different pump powers in Fig.~\ref{fig:pulsedpumptransmission}(a) and (c).}). The signal counts in Fig.~\ref{fig:pulsedcountsnano} exhibit an exponential loading curve similar to the pump, but with a time constant determined by the overlap of the parametric modes depending on the frequency mismatch $\Delta$ (see Fig.~\ref{fig:SPDCmodesill_shifted}). The highest photon rates with the longest rise times are achieved for a zero frequency mismatch (red traces: \SIrange[range-units = single]{284}{294}{\s} in Fig.~\ref{fig:pulsedcountsnano}(a) and \SIrange[range-units = single]{124}{154}{\s} in Fig.~\ref{fig:pulsedcountsnano}(b)). At non-zero frequency mismatch $\Delta$, photon rates are decreased and rise time is increased. We attribute the latter to the higher bandwidth of the parametric frequencies at non-zero detuning, as illustrated in Fig.~\ref{fig:SPDCmodesill}.
+\begin{figure}[htb]
+	\centering
+	\includegraphics[scale=0.8]{pictures/exp_WGMR_detuning/SPDC_detuning_pulses_1.pdf} 
+	\caption{Signal photon counts at pulsed excitation. Each trace in (a) and (b) corresponds to a different temperature-induced frequency mismatch $\Delta$ of parametric down-conversion shown in Fig.~\ref{fig:pulsedcounts}(a) and (b), respectively. At the beginning of the pulses, we observe shorter rise times of the count rates for an increased frequency mismatch $\Delta$. The unmodified cavity ring-down is observed at the end of the pulses leading to a signal bandwidth of ${\gamma_\tx{s}=\SI{7.4}{\MHz}}$ in (a) and ${\gamma_\tx{s}=\SI{9.9}{\MHz}}$ in (b).}
+	\label{fig:pulsedcountsnano}
+\end{figure}
+
+At the end of the pulse, the pump light quickly couples out from the resonator. This region corresponds to the cavity ring-down where the rate of the signal photons is solely determined by the bandwidth of the signal mode. The first part of the pulse in Fig.~\ref{fig:pulsedcountsnano} already gives us an exponentially rising single photon wave packet. The end part of the pulse, however, adds an exponentially decreasing tail to each single photon temporal mode due to cavity ring-down of each photon.
 
 \section{Locking the phase-matching temperature}
+Here come figures of cavity sweeps and the shifted single photons count rate profile. The final figure is a stable lock?
 
 \section{References}
 	\bibliographystyle{apsrev4-1}
